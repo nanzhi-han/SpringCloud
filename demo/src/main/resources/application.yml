@@ -1,0 +1,60 @@
+
+
+#Shiro
+spring:
+#Spring Boot 会自动加载 spring.datasource.* 相关配置，数据源就会自动注入到 sqlSessionFactory 中，sqlSessionFactory 会自动注入到 Mapper 中
+    datasource:
+        url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+        username: root
+        password: root
+        diver-class-name: com.mysql.cj.jdbc.Driver
+
+    jpa:
+        database: mysql
+        show-sql: true
+        hibernate:
+          ddl-auto: update
+        properties:
+          hibernate:
+            dialect: org.hibernate.dialect.MySQL5Dialect
+    rabbitmq:
+      host: 192.168.0.86
+      port: 5672
+      username: admin
+      password: 123456
+    thymeleaf:
+        cache: false
+        mode: HTML
+    application:
+      name: Admin Client
+      admin:
+        jmx-name: Spring-boot-rabbitmq
+    boot:
+      admin:
+        client:
+          url: http://localhost:8000
+    redis:
+      database: 0
+      host: localhost
+      port: 6379
+      password: 13456
+      lettuce:
+        pool:
+          max-active: 8
+          max-wait: -1
+          max-idle: 8
+          min-idle: 0
+    mail:
+      password: s19970613
+      default-encoding: UTF-8
+      username: m17343004135@163.com
+      host: smtp.163.com
+server:
+  port: 8080
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.example.demo.model
+
+

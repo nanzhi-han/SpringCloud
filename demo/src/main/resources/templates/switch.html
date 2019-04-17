@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <div th:switch="${sex}">
+        <p th:case="'woman'">她是女的</p>
+        <p th:case="'man'">他是男的</p>
+        <p th:case="*">未知型号</p><!--默认-->
+    </div>
+</div>
+</body>
+</html>
